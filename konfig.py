@@ -1,5 +1,5 @@
 import os
-import string
+import re
 
 
 class Konfig:
@@ -24,8 +24,9 @@ class Konfig:
         if not os.path.isfile(filename):
             return
         for line in open(filename).readlines():
-            (key, value) = string.split(line.rstrip(), '=')
-            self.kv[key] = value
+            match = re.match(r'\A([A-Za-z0-9_]+)=(.*)', line)
+            if match:
+                self.kv[match.group(1)] = str(match.group(2))
 
     def use_dict(self, input):
         for key in input.keys():
