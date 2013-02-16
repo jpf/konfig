@@ -9,7 +9,7 @@ Example:
 from konfig import Konfig
 konf = Konfig()
 konf.username
-'''
+```
 
 
 Callling "konf.username" will search
