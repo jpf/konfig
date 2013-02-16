@@ -5,9 +5,11 @@ Stores sensitive configuration data in a way that works nicely with Heroku.
 
 Example:
 
-  from konfig import Konfig
-  konf = Konfig()
-  konf.username
+```python
+from konfig import Konfig
+konf = Konfig()
+konf.username
+'''
 
 
 Callling "konf.username" will search
